@@ -1,0 +1,12 @@
+- hosts: all
+  remote_user: jahmed
+  become: yes
+  tasks:  
+    - name: check if apache is running
+      service:
+        name: apache2
+        state: started
+    - name: check if ssh is running
+      service:
+        name: ssh
+        state: started

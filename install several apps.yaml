@@ -1,0 +1,13 @@
+- hosts: all
+  remote_user: jahmed
+  become: yes
+  tasks:  
+    - name: Install several apps
+      apt:
+        name: "{{item}}"
+        state: present
+      loop:
+        - unzip
+        - ruby
+        - java
+        - php
